@@ -6,4 +6,6 @@ public interface CardValidCallback {
    * @param card the validated card
    */
   void cardValid(CreditCard card);
+
+  void cardChanged(CreditCard card);
 }

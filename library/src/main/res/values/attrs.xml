@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="CreditCardForm">
+    <declare-styleable name="CreditCardView">
         <attr name="ce_include_exp"        format="boolean"/>
         <attr name="ce_include_security"   format="boolean"/>
         <attr name="ce_include_zip"        format="boolean"/>

@@ -21,7 +21,7 @@
             android:text="Form with no zip"
             tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry"/>
 
-        <org.baole.creditcardentry.CreditCardForm
+        <org.baole.creditcardentry.CreditCardView
             android:id="@+id/form_no_zip"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -38,7 +38,7 @@
             android:text="Form with zip and no helper text"
             tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry"/>
 
-        <org.baole.creditcardentry.CreditCardForm
+        <org.baole.creditcardentry.CreditCardView
             android:id="@+id/form_with_zip"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -55,7 +55,7 @@
             android:text="Form with yellow background and red border"
             tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry"/>
 
-        <org.baole.creditcardentry.CreditCardForm
+        <org.baole.creditcardentry.CreditCardView
             android:id="@+id/yellow_form"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -73,7 +73,7 @@
             android:text="Form with just card number"
             tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry"/>
 
-        <org.baole.creditcardentry.CreditCardForm
+        <org.baole.creditcardentry.CreditCardView
             android:id="@+id/just_card_form"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -92,7 +92,7 @@
             android:text="Form with just card number and zip"
             tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry"/>
 
-        <org.baole.creditcardentry.CreditCardForm
+        <org.baole.creditcardentry.CreditCardView
             android:id="@+id/card_and_zip_form"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -111,7 +111,7 @@
             android:text="Form with prepopulated card number"
             tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry"/>
 
-        <org.baole.creditcardentry.CreditCardForm
+        <org.baole.creditcardentry.CreditCardView
             android:id="@+id/pre_populated_form"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -130,7 +130,7 @@
             android:text="Form with clear button"
             tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry"/>
 
-        <org.baole.creditcardentry.CreditCardForm
+        <org.baole.creditcardentry.CreditCardView
             android:id="@+id/clear_test_form"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

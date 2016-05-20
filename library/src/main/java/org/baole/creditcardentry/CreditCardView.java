@@ -23,7 +23,7 @@ import org.baole.creditcardentry.internal.CreditCardEntry;
 
 import org.baole.creditcard.R;
 
-public class CreditCardForm extends RelativeLayout {
+public class CreditCardView extends RelativeLayout {
 
 	private  int textSize;
 	private CreditCardEntry entry;
@@ -35,17 +35,18 @@ public class CreditCardForm extends RelativeLayout {
 	private Drawable inputBackground;
 	private boolean useDefaultColors;
 	private boolean animateOnError;
-	private String cardNumberHint = "xxxx xxxx xxxx xxxx";
+	private String cardNumberHint = null;
 
-	public CreditCardForm(Context context) {
+
+	public CreditCardView(Context context) {
 		this(context, null);
 	}
 
-	public CreditCardForm(Context context, AttributeSet attrs) {
+	public CreditCardView(Context context, AttributeSet attrs) {
 		this(context, attrs, 0);
 	}
 
-	public CreditCardForm(Context context, AttributeSet attrs, int defStyle) {
+	public CreditCardView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
 
 		if(!isInEditMode()) {
@@ -57,28 +58,28 @@ public class CreditCardForm extends RelativeLayout {
 				try {
 					typedArray = context.getTheme().obtainStyledAttributes(
 							attrs,
-							R.styleable.CreditCardForm,
+							R.styleable.CreditCardView,
 							0,
 							0
 					);
 
-					this.cardNumberHint = typedArray.getString(R.styleable.CreditCardForm_ce_card_number_hint);
-					this.includeExp = typedArray.getBoolean(R.styleable.CreditCardForm_ce_include_exp, true);
-					this.includeSecurity = typedArray.getBoolean(R.styleable.CreditCardForm_ce_include_security, true);
-					this.includeZip = typedArray.getBoolean(R.styleable.CreditCardForm_ce_include_zip, true);
-					this.includeHelper = typedArray.getBoolean(R.styleable.CreditCardForm_ce_include_helper, true);
-					this.textHelperColor = typedArray.getColor(R.styleable.CreditCardForm_ce_helper_text_color, getResources().getColor(R.color.ce_text_helper_color));
-					this.inputBackground = typedArray.getDrawable(R.styleable.CreditCardForm_ce_input_background);
-					this.useDefaultColors = typedArray.getBoolean(R.styleable.CreditCardForm_ce_default_text_colors, false);
-					this.animateOnError = typedArray.getBoolean(R.styleable.CreditCardForm_ce_on_error_animation_enabled, true);
-					this.textSize = typedArray.getDimensionPixelSize(R.styleable.CreditCardForm_ce_text_size,  getResources().getDimensionPixelSize(R.dimen.ce_default_text_size));
+					this.cardNumberHint = typedArray.getString(R.styleable.CreditCardView_ce_card_number_hint);
+					this.includeExp = typedArray.getBoolean(R.styleable.CreditCardView_ce_include_exp, true);
+					this.includeSecurity = typedArray.getBoolean(R.styleable.CreditCardView_ce_include_security, true);
+					this.includeZip = typedArray.getBoolean(R.styleable.CreditCardView_ce_include_zip, true);
+					this.includeHelper = typedArray.getBoolean(R.styleable.CreditCardView_ce_include_helper, true);
+					this.textHelperColor = typedArray.getColor(R.styleable.CreditCardView_ce_helper_text_color, getResources().getColor(R.color.ce_text_helper_color));
+					this.inputBackground = typedArray.getDrawable(R.styleable.CreditCardView_ce_input_background);
+					this.useDefaultColors = typedArray.getBoolean(R.styleable.CreditCardView_ce_default_text_colors, false);
+					this.animateOnError = typedArray.getBoolean(R.styleable.CreditCardView_ce_on_error_animation_enabled, true);
+					this.textSize = typedArray.getDimensionPixelSize(R.styleable.CreditCardView_ce_text_size,  getResources().getDimensionPixelSize(R.dimen.ce_default_text_size));
 				} finally {
 					if (typedArray != null) typedArray.recycle();
 				}
 			}
 
 			// defaults if not set by user
-			if(cardNumberHint == null) cardNumberHint = "1234 5678 9012 3456";
+			if(cardNumberHint == null) cardNumberHint = "XXXX XXXX XXXX XXXX";
 			if(inputBackground == null) {
 				//noinspection deprecation
 				inputBackground = context.getResources().getDrawable(R.drawable.background_white);

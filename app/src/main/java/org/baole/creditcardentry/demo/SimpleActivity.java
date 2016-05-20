@@ -7,7 +7,7 @@ import android.widget.Toast;
 
 import org.baole.creditcardentry.CardValidCallback;
 import org.baole.creditcardentry.CreditCard;
-import org.baole.creditcardentry.CreditCardForm;
+import org.baole.creditcardentry.CreditCardView;
 
 public class SimpleActivity extends Activity {
 	private static final String TAG = "SimpleActivity";
@@ -24,7 +24,7 @@ public class SimpleActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.simple);
 
-		final CreditCardForm zipForm = (CreditCardForm) findViewById(R.id.form_with_zip);
+		final CreditCardView zipForm = (CreditCardView) findViewById(R.id.form_with_zip);
 		zipForm.setOnCardValidCallback(cardValidCallback);
 	}
 

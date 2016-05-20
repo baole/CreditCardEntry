@@ -11,8 +11,6 @@ Regex is used to validate credit card types and a Luhn check is performed on the
  - Hides number for privacy
  - Supports VISA, MasterCard, Discover and AMEX
 
-![][1]
-
 
 # Including in your project
 
@@ -30,7 +28,7 @@ Add the project to your `dependencies`
 
 ```
     dependencies {
-        compile 'org.baole.creditcardinput:library::1.1@aar'
+        compile 'org.baole.creditcardinput:library::1.3@aar'
     }
 
 ```
@@ -42,7 +40,7 @@ Please see below for an example.
 XML
 
 ```
-        <org.baole.creditcardentry.CreditCardForm
+        <org.baole.creditcardentry.CreditCardView
             android:id="@+id/credit_card_form"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -70,38 +68,41 @@ XML
 
 In code:
 
+Listen to CreditCard events
+
 ```
-    public class MainActivity extends Activity {
-  
-      private LinearLayout linearLayout;
-      private CreditCardForm form;
-  
-      protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-  
-        setContentView(R.layout.activity_main);
-    	linearLayout = (LinearLayout) findViewById(R.id.layer);
-		
-        form = new CreditCardForm(this);
-    	linearLayout.addView(form);
-    	
-    	buttonAuthorize = (Button) findViewById(R.id.buttonAuthorize);
-    	buttonAuthorize.setOnClickListener(new OnClickListener() {
-    		
-    		@Override
-    		public void onClick(View arg0) {
-    			if(form.isCreditCardValid())
-    			{
-    				CreditCard card = form.getCreditCard();
-    				//Pass credit card to service
-    			}
-    			else
-    			{
-    				//Alert Credit card invalid
-    			}
-    		}
-    	});
-    }
+    cardView.setOnCardValidCallback(new CardValidCallback() {
+        @Override
+        public void cardValid(CreditCard creditCard) {
+           // TODO
+        }
+
+        @Override
+        public void cardChanged(CreditCard creditCard) {
+           // TODO
+        }
+    });
+```
+
+Process Credit Card data
+
+```
+    submit.setOnClickListener(new OnClickListener() {
+
+        @Override
+        public void onClick(View arg0) {
+            if(form.isCreditCardValid())
+            {
+                CreditCard card = cardView.getCreditCard();
+                //Pass credit card to service
+            }
+            else
+            {
+                //Alert Credit card invalid
+            }
+        }
+    });
+
 ```
 
 # TODO
@@ -110,6 +111,10 @@ In code:
 
 # Version History
 
-###May 20/2016
+###Ver 1.3 (May 20/2016)
+ - Prefix attribute with ce_
+ - Add callback listener
+
+###Ver 1.0 (May 20/2016)
  - fork from https://github.com/dbachelder/CreditCardEntry/
  - refactoring and publish to Bintray
