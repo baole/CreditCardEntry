@@ -1,4 +1,4 @@
-package com.anttek.creditcardentry;
+package org.baole.creditcardentry;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -19,7 +19,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.anttek.creditcardentry.internal.CreditCardEntry;
+import org.baole.creditcardentry.internal.CreditCardEntry;
 
 import org.baole.creditcard.R;
 

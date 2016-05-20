@@ -2,7 +2,6 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.jfrog.bintray'
 apply plugin: 'com.github.dcendents.android-maven'
 
-group = 'com.anttek.creditcardinput'
 version = VERSION
 
 
@@ -55,18 +54,18 @@ bintray {
     key = BINTRAY_KEY
     pkg {
         repo = 'maven'
-        name = 'com.anttek.foreground.widget'
+        name = 'org.baole.creditcardinput'
 
         version {
             name = VERSION
-            desc = 'Foregroundview'
+            desc = 'Credit card input view for Android'
             released  = new Date()
             vcsTag = VERSION
         }
 
         licenses = ['Apache-2.0']
-        vcsUrl = 'https://github.com/baole/ForegroundView.git'
-        websiteUrl = 'https://github.com/baole/ForegroundView'
+        vcsUrl = 'https://github.com/baole/CreditCardEntry.git'
+        websiteUrl = 'https://github.com/baole/CreditCardEntry'
     }
     configurations = ['archives']
 }

@@ -1,10 +1,10 @@
-package com.anttek.creditcardentry.fields;
+package org.baole.creditcardentry.fields;
 
 import android.content.Context;
 import android.text.Editable;
 import android.util.AttributeSet;
 
-import com.anttek.creditcardentry.internal.CreditCardUtil;
+import org.baole.creditcardentry.internal.CreditCardUtil;
 
 import org.baole.creditcard.R;
 

@@ -10,7 +10,7 @@
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
                   android:orientation="vertical"
-                  tools:context="com.anttek.creditcardentry.demo.MainActivity">
+                  tools:context="org.baole.creditcardentry.demo.MainActivity">
 
         <TextView
             android:id="@+id/zip_label"
@@ -21,13 +21,13 @@
             android:text="Form with zip and no helper text"
             tools:ignore="HardcodedText,RtlHardcoded,RtlSymmetry"/>
 
-        <com.anttek.creditcardentry.CreditCardForm
+        <org.baole.creditcardentry.CreditCardForm
             android:id="@+id/form_with_zip"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="15dp"
-            app:include_helper="false"
-            app:include_zip="true"/>
+            app:ce_include_helper="false"
+            app:ce_include_zip="true"/>
 
     </LinearLayout>
 </ScrollView>

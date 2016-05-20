@@ -6,13 +6,11 @@ android {
 
 
     defaultConfig {
-        applicationId "org.baole.app"
+        applicationId "org.baole.creditcardentry.demo"
         minSdkVersion Integer.parseInt(MIN_SDK)
         targetSdkVersion Integer.parseInt(TARGET_SDK)
         versionCode 1
         versionName "1.0"
-
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {

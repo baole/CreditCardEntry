@@ -1,4 +1,4 @@
-package com.anttek.creditcardentry.internal;
+package org.baole.creditcardentry.internal;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -37,14 +37,14 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.anttek.creditcardentry.fields.CreditCardText;
-import com.anttek.creditcardentry.fields.CreditEntryFieldBase;
-import com.anttek.creditcardentry.fields.ExpDateText;
-import com.anttek.creditcardentry.fields.SecurityCodeText;
-import com.anttek.creditcardentry.fields.ZipCodeText;
-import com.anttek.creditcardentry.CardType;
-import com.anttek.creditcardentry.CardValidCallback;
-import com.anttek.creditcardentry.CreditCard;
+import org.baole.creditcardentry.fields.CreditCardText;
+import org.baole.creditcardentry.fields.CreditEntryFieldBase;
+import org.baole.creditcardentry.fields.ExpDateText;
+import org.baole.creditcardentry.fields.SecurityCodeText;
+import org.baole.creditcardentry.fields.ZipCodeText;
+import org.baole.creditcardentry.CardType;
+import org.baole.creditcardentry.CardValidCallback;
+import org.baole.creditcardentry.CreditCard;
 
 import org.baole.creditcard.R;
 

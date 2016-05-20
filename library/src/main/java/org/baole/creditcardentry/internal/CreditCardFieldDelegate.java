@@ -1,9 +1,9 @@
-package com.anttek.creditcardentry.internal;
+package org.baole.creditcardentry.internal;
 
 import android.widget.EditText;
 
-import com.anttek.creditcardentry.fields.CreditEntryFieldBase;
-import com.anttek.creditcardentry.CardType;
+import org.baole.creditcardentry.fields.CreditEntryFieldBase;
+import org.baole.creditcardentry.CardType;
 
 /**
  * contract for delegate

@@ -1,4 +1,4 @@
-package com.anttek.creditcardentry.fields;
+package org.baole.creditcardentry.fields;
 
 import android.R.color;
 import android.content.Context;
@@ -26,7 +26,7 @@ import android.view.inputmethod.InputConnectionWrapper;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.anttek.creditcardentry.internal.CreditCardFieldDelegate;
+import org.baole.creditcardentry.internal.CreditCardFieldDelegate;
 
 import org.baole.creditcard.R;
 

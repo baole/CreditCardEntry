@@ -1,14 +1,13 @@
-package com.anttek.creditcardentry.demo;
+package org.baole.creditcardentry.demo;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.anttek.creditcardentry.CardValidCallback;
-import com.anttek.creditcardentry.CreditCard;
-import com.anttek.creditcardentry.CreditCardForm;
-import com.devmarvel.creditcardentrydemo.R;
+import org.baole.creditcardentry.CardValidCallback;
+import org.baole.creditcardentry.CreditCard;
+import org.baole.creditcardentry.CreditCardForm;
 
 public class SimpleActivity extends Activity {
 	private static final String TAG = "SimpleActivity";

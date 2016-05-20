@@ -50,7 +50,7 @@ Please see below for an example.
 XML
 
 ```
-        <com.anttek.creditcardentry.CreditCardForm
+        <org.baole.creditcardentry.CreditCardForm
             android:id="@+id/credit_card_form"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
