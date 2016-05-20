@@ -1,0 +1,72 @@
+apply plugin: 'com.android.library'
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.github.dcendents.android-maven'
+
+group = 'com.anttek.creditcardinput'
+version = VERSION
+
+
+android {
+    compileSdkVersion Integer.parseInt(COMPILE_SDK)
+    buildToolsVersion BUILD_TOOLS_VERSION
+
+
+    defaultConfig {
+        minSdkVersion Integer.parseInt(MIN_SDK)
+        targetSdkVersion Integer.parseInt(TARGET_SDK)
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile 'com.android.support:support-v4:' + SUPPORT_VERSION
+}
+
+task generateSourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier 'sources'
+}
+
+task generateJavadocs(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath()
+            .join(File.pathSeparator))
+}
+
+task generateJavadocsJar(type: Jar) {
+    from generateJavadocs.destinationDir
+    classifier 'javadoc'
+}
+
+generateJavadocsJar.dependsOn generateJavadocs
+
+artifacts {
+    archives generateJavadocsJar
+    archives generateSourcesJar
+}
+
+bintray {
+    user = USER
+    key = BINTRAY_KEY
+    pkg {
+        repo = 'maven'
+        name = 'com.anttek.foreground.widget'
+
+        version {
+            name = VERSION
+            desc = 'Foregroundview'
+            released  = new Date()
+            vcsTag = VERSION
+        }
+
+        licenses = ['Apache-2.0']
+        vcsUrl = 'https://github.com/baole/ForegroundView.git'
+        websiteUrl = 'https://github.com/baole/ForegroundView'
+    }
+    configurations = ['archives']
+}
