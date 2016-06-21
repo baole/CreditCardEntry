@@ -1,9 +1,6 @@
 apply plugin: 'com.android.library'
 apply plugin: 'com.jfrog.bintray'
-apply plugin: 'com.github.dcendents.android-maven'
 
-version = VERSION
-group = 'org.baole.creditcardinput'
 
 android {
     compileSdkVersion Integer.parseInt(COMPILE_SDK)
@@ -25,6 +22,13 @@ android {
 dependencies {
     compile 'com.android.support:support-v4:' + SUPPORT_VERSION
 }
+
+
+
+//publishing ------------------------------
+
+version = VERSION
+group = 'org.baole.creditcardinput'
 
 
 task generateSourcesJar(type: Jar) {
@@ -50,23 +54,58 @@ artifacts {
     archives generateSourcesJar
 }
 
+
+publishing {
+    publications {
+        MyPublication(MavenPublication) {
+            groupId group
+            version version
+            artifact "$buildDir/outputs/aar/library-release.aar" //aar artifact you want to publish
+
+            //generate pom nodes for dependencies
+            pom.withXml {
+                def dependenciesNode = asNode().appendNode('dependencies')
+                configurations.compile.allDependencies.each { dependency ->
+                    def dependencyNode = dependenciesNode.appendNode('dependency')
+                    dependencyNode.appendNode('groupId', dependency.group)
+                    dependencyNode.appendNode('artifactId', dependency.name)
+                    dependencyNode.appendNode('version', dependency.version)
+                }
+            }
+        }
+    }
+}
+
+
 bintray {
     user = USER
     key = BINTRAY_KEY
+    publications = ['MyPublication']
     pkg {
+//        repo = 'generic'
         repo = 'maven'
         name = group
 
+        userOrg = user
+
         version {
             name = VERSION
-            desc = 'Credit card input view for Android'
+            desc = 'Material EditText'
             released  = new Date()
             vcsTag = VERSION
         }
 
         licenses = ['Apache-2.0']
-        vcsUrl = 'https://github.com/baole/CreditCardEntry.git'
-        websiteUrl = 'https://github.com/baole/CreditCardEntry'
+        vcsUrl = git_url
+        websiteUrl = home_url
+
+        labels = ['android', 'material', 'edittext']
+        publicDownloadNumbers = true
     }
+
     configurations = ['archives']
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.4'
 }
