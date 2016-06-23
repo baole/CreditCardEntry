@@ -19,6 +19,12 @@ public class MainActivity extends Activity {
 			Log.d(TAG, "valid card: " + card);
 			Toast.makeText(MainActivity.this, "Card valid and complete", Toast.LENGTH_SHORT).show();
 		}
+
+		@Override
+		public void cardChanged(CreditCard card) {
+
+		}
+
 	};
 
 	protected void onCreate(Bundle savedInstanceState) {

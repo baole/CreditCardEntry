@@ -121,7 +121,7 @@ public class CreditCardView extends RelativeLayout {
 		cardImageFrame.setLayoutParams(frameParams);
 		cardImageFrame.setFocusable(true);
 		cardImageFrame.setFocusableInTouchMode(true);
-		cardImageFrame.setPadding(10, 0, 0, 0);
+		cardImageFrame.setPadding(0, 0, 0, 0);
 
 		ImageView cardFrontImage = new ImageView(context);
 		LayoutParams layoutParams = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
